@@ -1,5 +1,5 @@
 {
-  "name": "finance-whale-client",
+  "name": "finance-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,12 +17,14 @@
     "@mantine/modals": "^5.0.2",
     "@mantine/next": "^5.0.2",
     "@mantine/notifications": "^5.0.2",
+    "@tabler/icons": "^1.84.0",
     "next": "12.2.3",
     "next-redux-wrapper": "^7.0.5",
     "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
+    "react-scroll": "^1.8.7",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9"
   },
@@ -30,6 +32,7 @@
     "@types/node": "^18.7.6",
     "@types/react": "^18.0.17",
     "@types/react-dom": "18.0.6",
+    "@types/react-scroll": "^1.8.4",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3",
     "typescript": "^4.7.4"

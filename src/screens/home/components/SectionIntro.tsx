@@ -20,6 +20,19 @@ const useStyles = createStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'nowrap',
+
+    [`@media (max-width: ${theme.breakpoints.xs}px)`]: {
+      flexDirection: 'column-reverse',
+      marginTop: '50px',
+
+      ".about": {
+        padding: '30px 20px',
+      },
+
+      ".image": {
+        padding: '30px 20px',
+      }
+    }
   }
 }));
 
@@ -29,27 +42,22 @@ export const SectionIntro: FC = () => {
 
   return (
     <Box className={classes.wrapper}>
-      <Box sx={{ position: 'absolute', top: 0}}>
+      <Box sx={{ position: 'absolute', top: 0, maxWidth: '100%' }}>
         <Header />
       </Box>
 
       <Group spacing={0} className={classes.content}>
-        <Box>
-          <Title order={1}>EASY WAY TO MANAGA</Title>
-          <Title order={1}>YOUR WALLET</Title>
-
-          <Text sx={{ width: '450px', fontStyle: 'italic' }} mt={10}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Ipsa autem quibusdam explicabo ab laudantium, fugiat delectus,
-            vero laborum dolorem distinctio ex at aperiam ratione odio repellat provident omnis error vel.
+        <Box sx={{ maxWidth: '100%' }} className="about">
+          <Title order={1}>THE MOST RELIABLE AI TRADING</Title>
+          <Text sx={{ width: '450px', fontStyle: 'italic', maxWidth: '100%' }} mt={10}>
+            SSB Capital is a global online investment platform that allows investors to invest in financial innovation including Crypto Currency, funds, bonds and other new alternative financial products by using AI (Artificial Intelligence) trading system.
           </Text>
-
           <Button radius={30} mt={30} size="lg" sx={{ backgroundColor: '#1566CE', height: '48px', boxShadow: `5px 5px 20px ${theme.fn.rgba('#1566CE', 0.5)}` }}>
             Get Started
           </Button>
         </Box>
 
-        <Box sx={{ position: 'relative', flex: '1 1 auto', display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ position: 'relative', flex: '1 1 auto', display: 'flex', justifyContent: 'center' }} className="image">
           <img alt="" src='/images/home/intro.png' style={{ width: '550px', maxWidth: '100%' }} />
         </Box>
       </Group>

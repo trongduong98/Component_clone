@@ -4,6 +4,17 @@ import { FC } from 'react';
 const useStyles = createStyles(theme => ({
   wrapper: {
     width: '100%',
+    paddingBottom: '80px',
+    [`@media (max-width: ${theme.breakpoints.xs}px)`]: { 
+      justifyContent: 'center',
+      paddingBottom: '20px',
+    }
+  },
+  imageStyle: {
+    width: '200px',
+    [`@media (max-width: ${theme.breakpoints.xs}px)`]: { 
+      width: '150px',
+    }
   }
 }));
 
@@ -34,12 +45,14 @@ export const SectionAbout: FC = () => {
   ]
 
   return (
-    <Group className={classes.wrapper} position="apart" py={80}>
-      {cards.map((card, key) => <Stack key={key} align="center">
-        <Image src={card.image} width={200} />
-        <Text color={"#1566CE"} weight="bold" size="xl">{card.label}</Text>
-        <Text sx={{ width: '200px', textAlign: 'center' }} px={10}>{card.description}</Text>
-      </Stack>)}
+    <Group className={classes.wrapper} position="apart">
+      {cards.map((card, key) => 
+        <Stack key={key} align="center">
+          <Image src={card.image} className={classes.imageStyle} />
+          <Text color={"#1566CE"} weight="bold" size="xl">{card.label}</Text>
+          <Text sx={{ width: '200px', textAlign: 'center' }} px={10}>{card.description}</Text>
+        </Stack>)
+      }
     </Group>
   )
 }

@@ -2,6 +2,10 @@ import { Box, createStyles } from '@mantine/core';
 import { FC } from 'react';
 import { SectionAbout } from './components/SectionAbout';
 import { SectionIntro } from './components/SectionIntro';
+import { SectionFuture } from './components/SectionFuture';
+import { SectionInvest } from './components/SectionInvest';
+import { SectionContact } from './components/SectionContact';
+import { Footer } from './components/Footer';
 
 const useStyles = createStyles(theme => ({
   appWrapper: {
@@ -21,10 +25,15 @@ export const HomeScreen: FC = () => {
   return (
     <Box className={classes.appWrapper}>
       <SectionIntro />
-      
+
       <div className={classes.body}>
         <SectionAbout />
+        <SectionFuture />
+        <SectionInvest />
+        <SectionContact />
       </div>
+      
+      <Footer />
     </Box>
   )
 }

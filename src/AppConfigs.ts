@@ -10,13 +10,13 @@ export interface AppEnvs {
 
 export const DevelopmentEnvs: AppEnvs = {
   ENV: 'develop',
-  PUBLIC_URL: 'http://localhost:3000',
+  PUBLIC_URL: 'https://ssb-capital-phutl-staging-001.herokuapp.com',
 }
 
 export const StagingEnvs: AppEnvs = {
   ...DevelopmentEnvs,
   ENV: 'staging',
-  PUBLIC_URL: 'http://localhost:3000',
+  PUBLIC_URL: 'https://ssb-capital-phutl-staging-001.herokuapp.com',
 }
 
 export const ProductionEnvs: AppEnvs = {
@@ -29,4 +29,4 @@ const envs = ENV === 'production' ? ProductionEnvs
     : DevelopmentEnvs;
 
 export const getEnv = (key: keyof typeof envs) => envs[key];
-export const isDev = !['beta', 'production'].includes(ENV);
+export const isDev = !['production'].includes(ENV);
